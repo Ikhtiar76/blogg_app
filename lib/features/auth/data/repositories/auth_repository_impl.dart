@@ -1,6 +1,8 @@
 import 'package:blogg_app/core/error/exceptions.dart';
 import 'package:blogg_app/core/error/failures.dart';
 import 'package:blogg_app/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:blogg_app/features/auth/data/model/user_model.dart';
+import 'package:blogg_app/features/auth/domain/entities/user.dart';
 import 'package:blogg_app/features/auth/domain/repository/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
@@ -8,7 +10,7 @@ class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource authRemoteDataSource;
   AuthRepositoryImpl({required this.authRemoteDataSource});
   @override
-  Future<Either<Failure, String>> loginWithEmailPassword({
+  Future<Either<Failure, User>> loginWithEmailPassword({
     required String email,
     required String password,
   }) {
@@ -17,7 +19,7 @@ class AuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  Future<Either<Failure, String>> signUpWithNameEmailPassword({
+  Future<Either<Failure, User>> signUpWithNameEmailPassword({
     required String name,
     required String email,
     required String password,
