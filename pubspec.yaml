@@ -37,6 +37,7 @@ dependencies:
   fpdart: ^1.2.0
   supabase_flutter: any
   flutter_bloc: any
+  get_it: any
 
 dev_dependencies:
   flutter_test:
