@@ -12,6 +12,10 @@ class AppTheme {
       backgroundColor: AppPallete.backgroundColor,
       elevation: 0,
     ),
+    chipTheme: ChipThemeData(
+      color: WidgetStatePropertyAll(AppPallete.backgroundColor),
+      side: BorderSide.none,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       fillColor: AppPallete.borderColor,
       contentPadding: EdgeInsets.all(27),

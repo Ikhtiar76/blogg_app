@@ -38,6 +38,8 @@ dependencies:
   supabase_flutter: any
   flutter_bloc: any
   get_it: any
+  dotted_border: any
+  image_picker: any
 
 dev_dependencies:
   flutter_test:
