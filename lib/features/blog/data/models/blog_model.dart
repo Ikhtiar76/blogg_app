@@ -9,6 +9,7 @@ class BlogModel extends Blog {
     required super.imageUrl,
     required super.topics,
     required super.updatedAt,
+    super.posterName,
   });
   factory BlogModel.fromJson(Map<String, dynamic> json) {
     return BlogModel(
@@ -23,6 +24,29 @@ class BlogModel extends Blog {
           : DateTime.parse(json['updated_at']),
     );
   }
+
+  BlogModel copyWith({
+    String? id,
+    String? posterId,
+    String? title,
+    String? content,
+    String? imageUrl,
+    List<String>? topics,
+    DateTime? updatedAt,
+    String? posterName,
+  }) {
+    return BlogModel(
+      id: id ?? this.id,
+      posterId: posterId ?? this.posterId,
+      title: title ?? this.title,
+      content: content ?? this.content,
+      imageUrl: imageUrl ?? this.imageUrl,
+      topics: topics ?? this.topics,
+      updatedAt: updatedAt ?? this.updatedAt,
+      posterName: posterName ?? this.posterName,
+    );
+  }
+
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
