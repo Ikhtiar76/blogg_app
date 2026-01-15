@@ -44,7 +44,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
       final posterId =
           (context.read<AppUserCubit>().state as AppUserLoggedIn).user.id;
       context.read<BlogBloc>().add(
-        UploadBlogEvent(
+        BlogUpload(
           title: titleController.text.trim(),
           content: contentController.text.trim(),
           topics: selectedTopics,
@@ -79,7 +79,7 @@ class _AddNewBlogPageState extends State<AddNewBlogPage> {
         listener: (context, state) {
           if (state is BlogFailure) {
             showSnackbar(context, state.message);
-          } else if (state is BlogSuccess) {
+          } else if (state is BlogUploadSuccess) {
             Navigator.pushAndRemoveUntil(
               context,
               BlogPage.route(),
