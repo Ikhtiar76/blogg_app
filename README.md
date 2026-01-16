@@ -141,7 +141,7 @@ This project follows **Clean Architecture** with the following layers:
 
 ### 1. Clone the Repository
 ```bash
-git clone <[repository-url](https://github.com/Ikhtiar76/blogg_app)>
+git clone https://github.com/Ikhtiar76/blogg_app
 cd blogg_app
 ```
 
@@ -249,15 +249,3 @@ User Action → BLoC Event → Use Case → Repository
 2. Make your changes following the project structure
 3. Test thoroughly
 4. Submit a pull request with clear description
-
-## 📄 License
-
-This project is private and not licensed for public distribution.
-
-## 👨‍💻 Author
-
-Created with ❤️ for learning and development purposes.
-
-## 📞 Support
-
-For issues or questions, please create an issue in the repository.
