@@ -1,3 +1,4 @@
+import 'package:blogg_app/core/constants/constants.dart';
 import 'package:blogg_app/core/error/exceptions.dart';
 import 'package:blogg_app/core/error/failures.dart';
 import 'package:blogg_app/core/network/connection_checker.dart';
@@ -73,7 +74,7 @@ class AuthRepositoryImpl implements AuthRepository {
   Future<Either<Failure, User>> _getUser(Future<User> Function() fn) async {
     try {
       if (!await (connectionChecker.isConnected)) {
-        return left(Failure(message: 'No internet connection'));
+        return left(Failure(message: Constants.noConnectionErrorMessage));
       }
       final user = await fn();
       return right(user);

@@ -2,6 +2,7 @@ import 'package:blogg_app/core/common/widgets/loader.dart';
 import 'package:blogg_app/core/utills/show_snackbar.dart';
 import 'package:blogg_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:blogg_app/features/auth/presentation/pages/signup_page.dart';
+import 'package:blogg_app/features/blog/presentation/pages/blog_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:blogg_app/core/theme/app_pallete.dart';
@@ -37,6 +38,12 @@ class _LoginPageState extends State<LoginPage> {
           listener: (context, state) {
             if (state is AuthFailure) {
               showSnackbar(context, state.message);
+            } else if (state is AuthSuccess) {
+              Navigator.pushAndRemoveUntil(
+                context,
+                BlogPage.route(),
+                (route) => false,
+              );
             }
           },
           builder: (context, state) {
